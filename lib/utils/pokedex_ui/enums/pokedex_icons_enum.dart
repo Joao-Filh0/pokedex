@@ -7,4 +7,5 @@ enum PokedexIconsEnum {
   right,
   search,
   weight,
+  pokedex,
 }

@@ -16,9 +16,9 @@ class PokedexIcon extends StatelessWidget {
       Key? key,
       this.width = 48,
       this.height = 48,
-      this.branded = false})
-      : color = null,
-        super(key: key);
+      this.branded = false,
+      this.color})
+      : super(key: key);
 
   @override
   Widget build(BuildContext context) {
