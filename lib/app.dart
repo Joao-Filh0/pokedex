@@ -1,6 +1,10 @@
 import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_modular/flutter_modular.dart';
+import 'package:pokedex/commons/config/routes.dart';
+import 'package:pokedex/commons/http_client/dio_http_client_impl.dart';
+import 'package:pokedex/commons/http_client/http_client.dart';
+import 'package:pokedex/commons/pokedex_ui/widgets/pokedex_scroll_configuration.dart';
 import 'package:pokedex/core/data/datasources/pokedex_datasource/pokedex_datasource.dart';
 import 'package:pokedex/core/data/repositories/pokedex_repository/pokedex_repository_impl.dart';
 import 'package:pokedex/core/domain/repositories/pokedex_repository/pokedex_repository.dart';
@@ -9,10 +13,6 @@ import 'package:pokedex/core/domain/use_cases/get_pokemon_use_case/get_pokemon_u
 import 'package:pokedex/presentation/pages/details_page/details_page.dart';
 import 'package:pokedex/presentation/pages/home_page/blocs/get_pokemon_bloc.dart';
 import 'package:pokedex/presentation/pages/home_page/home_page.dart';
-import 'package:pokedex/utils/config/routes.dart';
-import 'package:pokedex/utils/http_client/dio_http_client_impl.dart';
-import 'package:pokedex/utils/http_client/http_client.dart';
-import 'package:pokedex/utils/pokedex_ui/widgets/pokedex_scroll_configuration.dart';
 
 import 'core/data/datasources/pokedex_datasource/pokedex_datasource_impl.dart';
 
@@ -24,8 +24,8 @@ class AppStart extends StatelessWidget {
     return MaterialApp.router(
       title: 'Flutter Pokédex',
       theme: ThemeData(
-        //fontFamily: 'Poppins',
-      ),
+          //fontFamily: 'Poppins',
+          ),
       builder: (context, child) => SafeArea(
         child: PokedexScrollConfiguration(
           child: child,
@@ -58,6 +58,7 @@ class AppModule extends Module {
   List<ModularRoute> get routes => [
         ChildRoute(AppRoutes.root, child: (context, args) => const HomePage()),
         ChildRoute(AppRoutes.details,
-            child: (context, args) => DetailsPage(params: args.data)),
+            child: (context, args) => DetailsPage(params: args.data),
+            transition: TransitionType.fadeIn),
       ];
 }

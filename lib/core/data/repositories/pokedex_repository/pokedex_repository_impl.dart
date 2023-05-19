@@ -1,9 +1,8 @@
+import 'package:pokedex/commons/errors/base_error.dart';
+import 'package:pokedex/commons/result_wrapper/result_wrapper.dart';
 import 'package:pokedex/core/data/datasources/pokedex_datasource/pokedex_datasource.dart';
 import 'package:pokedex/core/domain/entities/poke_entity.dart';
 import 'package:pokedex/core/domain/repositories/pokedex_repository/pokedex_repository.dart';
-import 'package:pokedex/utils/errors/base_error.dart';
-
-import '../../../../utils/result_wrapper/result_wrapper.dart';
 
 class PokedexRepositoryImpl implements PokedexRepository {
   final PokedexDataSource _datasource;
@@ -21,7 +20,6 @@ class PokedexRepositoryImpl implements PokedexRepository {
       }
       return ResultSuccess<List<PokeEntity>>(pokes);
     } catch (e) {
-      print(e);
       return ResultError(BaseError(e.toString()));
     }
   }

@@ -1,5 +1,6 @@
 import 'package:flutter/painting.dart';
-import 'package:pokedex/utils/pokedex_ui/enums/pokedex_types_enum.dart';
+
+import '../enums/pokedex_types_enum.dart';
 
 class AppColors {
   static Color primary = const Color(0xFFDC0A2D);

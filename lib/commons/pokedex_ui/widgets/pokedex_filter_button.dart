@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:pokedex/utils/pokedex_ui/enums/pokedex_icons_enum.dart';
-import 'package:pokedex/utils/pokedex_ui/palettes/colors.dart';
-import 'package:pokedex/utils/pokedex_ui/widgets/pokedex_icon.dart';
+import 'package:pokedex/commons/pokedex_ui/enums/pokedex_icons_enum.dart';
+import 'package:pokedex/commons/pokedex_ui/palettes/colors.dart';
+import 'package:pokedex/commons/pokedex_ui/widgets/pokedex_icon.dart';
 
 class PokedexFilterButton extends StatelessWidget {
   final double size;

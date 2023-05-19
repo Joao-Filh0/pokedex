@@ -18,4 +18,3 @@ enum PokedexTypesEnum {
   dark,
   fairy
 }
-

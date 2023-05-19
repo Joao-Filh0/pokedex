@@ -1,7 +1,6 @@
+import 'package:pokedex/commons/result_wrapper/result_wrapper.dart';
 import 'package:pokedex/core/domain/entities/poke_entity.dart';
 
-import '../../../../utils/result_wrapper/result_wrapper.dart';
-
-abstract class PokedexRepository{
+abstract class PokedexRepository {
   Future<Result<List<PokeEntity>>> getPoke();
 }

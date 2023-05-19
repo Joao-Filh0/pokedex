@@ -1,16 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_modular/flutter_modular.dart';
+import 'package:pokedex/commons/config/routes.dart';
+import 'package:pokedex/commons/pokedex_ui/palettes/colors.dart';
+import 'package:pokedex/commons/pokedex_ui/widgets/pokedex_filter_button.dart';
+import 'package:pokedex/commons/pokedex_ui/widgets/pokedex_input_field.dart';
+import 'package:pokedex/commons/states/bloc_states.dart';
 import 'package:pokedex/core/domain/entities/poke_entity.dart';
 import 'package:pokedex/presentation/pages/details_page/details_page.dart';
 import 'package:pokedex/presentation/pages/home_page/blocs/get_pokemon_bloc.dart';
-import 'package:pokedex/utils/config/routes.dart';
-import 'package:pokedex/utils/pokedex_ui/palettes/colors.dart';
-import 'package:pokedex/utils/states/bloc_states.dart';
-import '../../../utils/pokedex_ui/widgets/pokedex_input_field.dart';
 import 'components/header_component.dart';
 import 'components/pokedex_card_component.dart';
-import '../../../utils/pokedex_ui/widgets/pokedex_filter_button.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -21,6 +21,7 @@ class HomePage extends StatefulWidget {
 
 class _HomePageState extends State<HomePage> {
   late TextEditingController searchController;
+  final FocusNode searchFocusNode = FocusNode();
   late GetPokemonBloc _bloc;
 
   static const _gridPadding = 8.0;
@@ -31,6 +32,12 @@ class _HomePageState extends State<HomePage> {
     searchController = TextEditingController();
     _bloc = Modular.get<GetPokemonBloc>();
     _bloc();
+  }
+
+  @override
+  void dispose() {
+    super.dispose();
+    searchController.dispose();
   }
 
   @override
@@ -54,6 +61,7 @@ class _HomePageState extends State<HomePage> {
                       Expanded(
                           child: PokedexInputField(
                         controller: searchController,
+                        focusNode: searchFocusNode,
                         hintText: "Search",
                       )),
                       const SizedBox(
@@ -90,11 +98,12 @@ class _HomePageState extends State<HomePage> {
                               crossAxisSpacing: 10,
                               crossAxisCount: 3,
                             ),
-                            itemCount: 9,
+                            itemCount: state.data.length,
                             itemBuilder: (context, index) {
                               return PokedexCardComponent(
                                 tag: state.data[index].name,
                                 onTap: () {
+                                  searchFocusNode.unfocus();
                                   final params = DetailsPageParams(
                                       pokes: state.data, index: index);
                                   Modular.to.pushNamed(AppRoutes.details,

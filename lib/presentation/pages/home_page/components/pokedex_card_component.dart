@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:pokedex/utils/pokedex_ui/palettes/colors.dart';
+import 'package:pokedex/commons/pokedex_ui/palettes/colors.dart';
 
 class PokedexCardComponent extends StatelessWidget {
   final String id;

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:pokedex/utils/pokedex_ui/enums/pokedex_types_enum.dart';
-import 'package:pokedex/utils/pokedex_ui/palettes/colors.dart';
+import 'package:pokedex/commons/pokedex_ui/enums/pokedex_types_enum.dart';
+import 'package:pokedex/commons/pokedex_ui/palettes/colors.dart';
 
 class PokedexTag extends StatelessWidget {
   final PokedexTypesEnum type;
@@ -9,17 +9,17 @@ class PokedexTag extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 32,
+      height: 27,
       decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(15),
+        borderRadius: BorderRadius.circular(14),
         color: AppColors.getColorForType(type),
       ),
       padding: const EdgeInsets.all(6),
       child: FittedBox(
         child: Text(
           type.name,
-          style: const TextStyle(
-            color: Colors.white, // Cor do texto
+          style: TextStyle(
+            color: AppColors.light, // Cor do texto
           ),
         ),
       ),

@@ -1,4 +1,4 @@
-import 'package:pokedex/utils/pokedex_ui/enums/pokedex_types_enum.dart';
+import '../enums/pokedex_types_enum.dart';
 
 PokedexTypesEnum selectPokedexTypeByString(String type) {
   final pokedexType =

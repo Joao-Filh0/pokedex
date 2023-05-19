@@ -7,5 +7,3 @@ abstract class PokedexDataSource {
 
   Future<PokeEntity> getPokeInfo(String url);
 }
-
-

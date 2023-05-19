@@ -1,14 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:pokedex/utils/pokedex_ui/cubits/validator_bloc.dart';
+import 'package:pokedex/commons/pokedex_ui/cubits/validator_bloc.dart';
 
 import '../palettes/colors.dart';
 
 class PokedexInputField extends StatefulWidget {
   final String hintText;
   final TextEditingController? controller;
+  final FocusNode? focusNode;
 
-  const PokedexInputField({Key? key, required this.hintText, this.controller})
+  const PokedexInputField(
+      {Key? key, required this.hintText, this.controller, this.focusNode})
       : super(key: key);
 
   @override
@@ -36,6 +38,7 @@ class _PokedexInputFieldState extends State<PokedexInputField> {
         builder: (context, value) {
           return TextField(
             controller: widget.controller,
+            focusNode: widget.focusNode,
             onChanged: (inputted) => _validatorCubit(inputted.isNotEmpty),
             cursorColor: AppColors.neutral,
             textInputAction: TextInputAction.search,

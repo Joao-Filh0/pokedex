@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:pokedex/utils/pokedex_ui/cubits/validator_bloc.dart';
-import 'package:pokedex/utils/pokedex_ui/extensions/color_extension.dart';
+import 'package:pokedex/commons/pokedex_ui/cubits/validator_bloc.dart';
+import 'package:pokedex/commons/pokedex_ui/extensions/color_extension.dart';
 
 class PokedexProgressBar extends StatefulWidget {
   final double value;
