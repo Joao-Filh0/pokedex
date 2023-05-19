@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:pokedex/commons/pokedex_ui/palettes/colors.dart';
+import 'package:pokedex/commons/pokedex_ui/widgets/pokedex_text.dart';
 
 class PokedexCardComponent extends StatelessWidget {
   final String id;
@@ -67,7 +68,7 @@ class PokedexCardComponent extends StatelessWidget {
                 alignment: Alignment.bottomCenter,
                 child: Padding(
                   padding: const EdgeInsets.only(bottom: 4),
-                  child: Text(name),
+                  child: PokedexText(text: name),
                 )),
             Container(
               height: baseCardSize,
@@ -84,9 +85,10 @@ class PokedexCardComponent extends StatelessWidget {
               alignment: Alignment.topRight,
               child: Padding(
                 padding: const EdgeInsets.all(8.0),
-                child: Text(
-                  id,
-                  style: TextStyle(fontSize: 12.0, color: AppColors.neutral),
+                child: PokedexText(
+                  text: id,
+                  size: 12.0,
+                  color: AppColors.neutral,
                 ),
               ),
             )

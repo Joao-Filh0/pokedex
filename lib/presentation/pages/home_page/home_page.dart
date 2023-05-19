@@ -2,9 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 import 'package:pokedex/commons/config/routes.dart';
+import 'package:pokedex/commons/config/strings.dart';
 import 'package:pokedex/commons/pokedex_ui/palettes/colors.dart';
 import 'package:pokedex/commons/pokedex_ui/widgets/pokedex_filter_button.dart';
 import 'package:pokedex/commons/pokedex_ui/widgets/pokedex_input_field.dart';
+import 'package:pokedex/commons/pokedex_ui/widgets/pokedex_text.dart';
 import 'package:pokedex/commons/states/bloc_states.dart';
 import 'package:pokedex/core/domain/entities/poke_entity.dart';
 import 'package:pokedex/presentation/pages/details_page/details_page.dart';
@@ -62,7 +64,7 @@ class _HomePageState extends State<HomePage> {
                           child: PokedexInputField(
                         controller: searchController,
                         focusNode: searchFocusNode,
-                        hintText: "Search",
+                        hintText: AppString.search,
                       )),
                       const SizedBox(
                         width: 16,
@@ -117,7 +119,7 @@ class _HomePageState extends State<HomePage> {
                       }
                       if (state is ErrorState) {
                         return Center(
-                          child: Text(state.message),
+                          child: PokedexText(text: state.message),
                         );
                       }
                       return Center(

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:pokedex/commons/config/strings.dart';
 import 'package:pokedex/commons/pokedex_ui/palettes/colors.dart';
 import 'package:pokedex/commons/pokedex_ui/widgets/pokedex_animation_types.dart';
 import 'package:pokedex/commons/pokedex_ui/widgets/pokedex_text.dart';
@@ -41,25 +42,24 @@ class CardBody extends StatelessWidget {
                   Padding(
                     padding: const EdgeInsets.symmetric(vertical: 15.0),
                     child: PokedexText(
-                      text: "About",
+                      text: AppString.about,
                       color: color,
                       isFontFamily: true,
                       size: 20.0,
                     ),
                   ),
                   const PokemonInfo(),
-                  const Padding(
-                    padding:
-                        EdgeInsets.symmetric(vertical: 25.0, horizontal: 15.0),
+                  Padding(
+                    padding: const EdgeInsets.symmetric(
+                        vertical: 25.0, horizontal: 15.0),
                     child: PokedexText(
-                      text:
-                          'There is a plant seed on its back right from the day this Pokémon is born. The seed slowly grows larger.',
+                      text: AppString.pokemonDescriptionMock,
                     ),
                   ),
                   Padding(
                     padding: const EdgeInsets.only(bottom: 8.0),
                     child: PokedexText(
-                      text: "Base Stats",
+                      text: AppString.baseStats,
                       color: color,
                       isFontFamily: true,
                       size: 20.0,

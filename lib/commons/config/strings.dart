@@ -1,3 +1,14 @@
 class AppString {
-  static String name = 'Joao';
+  static String search = "Search";
+  static String baseStats = "Base Stats";
+  static String about = "About";
+  static String hp = "HP";
+  static String atk = "ATK";
+  static String def = "DEF";
+  static String satk = "SATK";
+  static String sdef = "SDEF";
+  static String spd = "SPD";
+
+  static String pokemonDescriptionMock =
+      "'There is a plant seed on its back right from the day this Pokémon is born. The seed slowly grows larger.'";
 }

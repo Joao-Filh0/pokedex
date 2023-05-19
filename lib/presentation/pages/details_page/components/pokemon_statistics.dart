@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:pokedex/commons/config/strings.dart';
 import 'package:pokedex/commons/pokedex_ui/extensions/color_extension.dart';
 import 'package:pokedex/commons/pokedex_ui/palettes/colors.dart';
 import 'package:pokedex/commons/pokedex_ui/widgets/pokedex_progress_bar.dart';
@@ -37,12 +38,12 @@ class _PokemonStatisticsState extends State<PokemonStatistics> {
       children: [
         Column(
           children: [
-            PokedexText(text: "HP", isFontFamily: true, color: widget.color),
-            PokedexText(text: "ATK", isFontFamily: true, color: widget.color),
-            PokedexText(text: "DEF", isFontFamily: true, color: widget.color),
-            PokedexText(text: "SATK", isFontFamily: true, color: widget.color),
-            PokedexText(text: "SDEF", isFontFamily: true, color: widget.color),
-            PokedexText(text: "SPD", isFontFamily: true, color: widget.color),
+            PokedexText(text: AppString.hp, isFontFamily: true, color: widget.color),
+            PokedexText(text: AppString.atk, isFontFamily: true, color: widget.color),
+            PokedexText(text: AppString.def, isFontFamily: true, color: widget.color),
+            PokedexText(text: AppString.satk, isFontFamily: true, color: widget.color),
+            PokedexText(text: AppString.sdef, isFontFamily: true, color: widget.color),
+            PokedexText(text: AppString.spd, isFontFamily: true, color: widget.color),
           ],
         ),
         SizedBox(
@@ -82,7 +83,7 @@ class _ProgressWithLabel extends StatelessWidget {
       padding: const EdgeInsets.only(bottom: 5.0),
       child: Row(
         children: [
-          Text('$value'.replaceAll(".", "")),
+          PokedexText(text:'$value'.replaceAll(".", "")),
           Padding(
             padding: const EdgeInsets.only(left: 10.0),
             child: SizedBox(

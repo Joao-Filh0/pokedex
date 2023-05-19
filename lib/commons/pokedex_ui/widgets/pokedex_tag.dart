@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:pokedex/commons/pokedex_ui/enums/pokedex_types_enum.dart';
 import 'package:pokedex/commons/pokedex_ui/palettes/colors.dart';
+import 'package:pokedex/commons/pokedex_ui/widgets/pokedex_text.dart';
 
 class PokedexTag extends StatelessWidget {
   final PokedexTypesEnum type;
+
   const PokedexTag({Key? key, required this.type}) : super(key: key);
 
   @override
@@ -16,11 +18,9 @@ class PokedexTag extends StatelessWidget {
       ),
       padding: const EdgeInsets.all(6),
       child: FittedBox(
-        child: Text(
-          type.name,
-          style: TextStyle(
-            color: AppColors.light, // Cor do texto
-          ),
+        child: PokedexText(
+          text: type.name,
+          color: AppColors.light,
         ),
       ),
     );
