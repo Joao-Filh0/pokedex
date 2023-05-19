@@ -1,4 +1,5 @@
 class AppString {
+  static String title = "Flutter Pokédex";
   static String search = "Search";
   static String baseStats = "Base Stats";
   static String about = "About";
@@ -8,7 +9,10 @@ class AppString {
   static String satk = "SATK";
   static String sdef = "SDEF";
   static String spd = "SPD";
+  static String weight = "Weight";
+  static String height = "Height";
+  static String moves = "Moves";
 
   static String pokemonDescriptionMock =
-      "'There is a plant seed on its back right from the day this Pokémon is born. The seed slowly grows larger.'";
+      "There is a plant seed on its back right from the day this Pokémon is born. The seed slowly grows larger.";
 }

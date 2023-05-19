@@ -2,6 +2,7 @@ import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 import 'package:pokedex/commons/config/routes.dart';
+import 'package:pokedex/commons/config/strings.dart';
 import 'package:pokedex/commons/http_client/dio_http_client_impl.dart';
 import 'package:pokedex/commons/http_client/http_client.dart';
 import 'package:pokedex/commons/pokedex_ui/widgets/pokedex_scroll_configuration.dart';
@@ -22,7 +23,7 @@ class AppStart extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp.router(
-      title: 'Flutter Pokédex',
+      title: AppString.title,
       theme: ThemeData(
           //fontFamily: 'Poppins',
           ),

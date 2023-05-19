@@ -48,7 +48,11 @@ class CardBody extends StatelessWidget {
                       size: 20.0,
                     ),
                   ),
-                  const PokemonInfo(),
+                  PokemonInfo(
+                    abilities: pokemon.abilities,
+                    weight: pokemon.weight,
+                    height: pokemon.height,
+                  ),
                   Padding(
                     padding: const EdgeInsets.symmetric(
                         vertical: 25.0, horizontal: 15.0),
