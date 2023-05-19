@@ -2,11 +2,12 @@ import 'package:flutter/material.dart';
 import 'package:pokedex/commons/pokedex_ui/enums/pokedex_icons_enum.dart';
 import 'package:pokedex/commons/pokedex_ui/palettes/colors.dart';
 import 'package:pokedex/commons/pokedex_ui/widgets/pokedex_icon.dart';
+import 'package:pokedex/commons/pokedex_ui/widgets/pokedex_icon_button.dart';
 import 'package:pokedex/core/domain/entities/poke_entity.dart';
 
 class PokemonImages extends StatelessWidget {
-  final VoidCallback next;
-  final VoidCallback back;
+  final VoidCallback? next;
+  final VoidCallback? back;
   final PokeEntity pokemon;
 
   const PokemonImages(
@@ -23,13 +24,10 @@ class PokemonImages extends StatelessWidget {
           padding: const EdgeInsets.symmetric(horizontal: 32.0),
           child: Row(
             children: [
-              GestureDetector(
+              PokedexIconButton(
+                icon: PokedexIconsEnum.left,
+                visible: back != null,
                 onTap: back,
-                child: PokedexIcon(
-                  icon: PokedexIconsEnum.left,
-                  size: 11.43,
-                  color: AppColors.light,
-                ),
               ),
               const Spacer(),
               Hero(
@@ -40,15 +38,10 @@ class PokemonImages extends StatelessWidget {
                       fit: BoxFit.cover,
                       pokemon.image)),
               const Spacer(),
-              GestureDetector(
+              PokedexIconButton(
+                icon: PokedexIconsEnum.right,
+                visible: next != null,
                 onTap: next,
-                child: SizedBox(
-                  child: PokedexIcon(
-                    icon: PokedexIconsEnum.right,
-                    size: 11.43,
-                    color: AppColors.light,
-                  ),
-                ),
               ),
             ],
           ),

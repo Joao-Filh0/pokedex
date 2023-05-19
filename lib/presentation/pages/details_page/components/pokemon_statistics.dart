@@ -38,12 +38,18 @@ class _PokemonStatisticsState extends State<PokemonStatistics> {
       children: [
         Column(
           children: [
-            PokedexText(text: AppString.hp, isFontFamily: true, color: widget.color),
-            PokedexText(text: AppString.atk, isFontFamily: true, color: widget.color),
-            PokedexText(text: AppString.def, isFontFamily: true, color: widget.color),
-            PokedexText(text: AppString.satk, isFontFamily: true, color: widget.color),
-            PokedexText(text: AppString.sdef, isFontFamily: true, color: widget.color),
-            PokedexText(text: AppString.spd, isFontFamily: true, color: widget.color),
+            PokedexText(
+                text: AppString.hp, isFontFamily: true, color: widget.color),
+            PokedexText(
+                text: AppString.atk, isFontFamily: true, color: widget.color),
+            PokedexText(
+                text: AppString.def, isFontFamily: true, color: widget.color),
+            PokedexText(
+                text: AppString.satk, isFontFamily: true, color: widget.color),
+            PokedexText(
+                text: AppString.sdef, isFontFamily: true, color: widget.color),
+            PokedexText(
+                text: AppString.spd, isFontFamily: true, color: widget.color),
           ],
         ),
         SizedBox(
@@ -83,7 +89,7 @@ class _ProgressWithLabel extends StatelessWidget {
       padding: const EdgeInsets.only(bottom: 5.0),
       child: Row(
         children: [
-          PokedexText(text:'$value'.replaceAll(".", "")),
+          PokedexText(text: '$value'.replaceAll(".", "")),
           Padding(
             padding: const EdgeInsets.only(left: 10.0),
             child: SizedBox(

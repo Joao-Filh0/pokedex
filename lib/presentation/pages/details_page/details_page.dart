@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:pokedex/commons/pokedex_ui/blocs/validator_bloc.dart';
 import 'package:pokedex/commons/pokedex_ui/enums/pokedex_icons_enum.dart';
 import 'package:pokedex/commons/pokedex_ui/enums/pokedex_types_enum.dart';
 import 'package:pokedex/commons/pokedex_ui/extensions/color_extensions.dart';
@@ -33,44 +35,63 @@ class _DetailsPageState extends State<DetailsPage> {
   int test = 1;
 
   late Color currentColor;
+  late ValidatorBloc<int> _jumpPokemonBloc;
 
   @override
   void initState() {
     super.initState();
     _updatePokemon(widget.params.index);
+    _jumpPokemonBloc = ValidatorBloc<int>(widget.params.index);
   }
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      backgroundColor: currentColor,
-      body: Stack(
-        children: [
-          CardBody(
-            color: currentColor,
-            pokemon: pokeSelected,
-          ),
-          Align(
-            alignment: Alignment.topRight,
-            child: Padding(
-              padding: const EdgeInsets.only(right: 9.0),
-              child: PokedexIcon(
-                color: currentColor.light(0.06),
-                icon: PokedexIconsEnum.pokeball,
-                size: 242,
+    return BlocBuilder<ValidatorBloc<int>, int>(
+      bloc: _jumpPokemonBloc,
+      builder: (context, indexPage) {
+        return Scaffold(
+          backgroundColor: currentColor,
+          body: Stack(
+            children: [
+              CardBody(
+                color: currentColor,
+                pokemon: pokeSelected,
               ),
-            ),
+              Align(
+                alignment: Alignment.topRight,
+                child: Padding(
+                  padding: const EdgeInsets.only(right: 9.0),
+                  child: PokedexIcon(
+                    color: currentColor.light(0.06),
+                    icon: PokedexIconsEnum.pokeball,
+                    size: 242,
+                  ),
+                ),
+              ),
+              PokemonImages(
+                pokemon: pokeSelected,
+                next: indexPage <= widget.params.pokes.length
+                    ? () {
+                        indexPage++;
+                        _updatePokemon(indexPage);
+                        _jumpPokemonBloc(indexPage);
+                      }
+                    : null,
+                back: indexPage > 0
+                    ? () {
+                        indexPage--;
+                        _updatePokemon(indexPage);
+                        _jumpPokemonBloc(indexPage);
+                      }
+                    : null,
+              ),
+              HeaderTitle(
+                name: pokeSelected.name,
+              )
+            ],
           ),
-          PokemonImages(
-            pokemon: pokeSelected,
-            next: () {},
-            back: () {},
-          ),
-          HeaderTitle(
-            name: pokeSelected.name,
-          )
-        ],
-      ),
+        );
+      },
     );
   }
 
