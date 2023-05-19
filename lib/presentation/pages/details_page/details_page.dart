@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:pokedex/commons/pokedex_ui/enums/pokedex_icons_enum.dart';
 import 'package:pokedex/commons/pokedex_ui/enums/pokedex_types_enum.dart';
-import 'package:pokedex/commons/pokedex_ui/extensions/color_extension.dart';
+import 'package:pokedex/commons/pokedex_ui/extensions/color_extensions.dart';
 import 'package:pokedex/commons/pokedex_ui/helpers/select_pokedex_type_by_string.dart';
 import 'package:pokedex/commons/pokedex_ui/palettes/colors.dart';
 import 'package:pokedex/commons/pokedex_ui/widgets/pokedex_icon.dart';
@@ -67,7 +67,7 @@ class _DetailsPageState extends State<DetailsPage> {
             back: () {},
           ),
           HeaderTitle(
-            tag: pokeSelected.name,
+            name: pokeSelected.name,
           )
         ],
       ),

@@ -3,6 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 import 'package:pokedex/commons/config/routes.dart';
 import 'package:pokedex/commons/config/strings.dart';
+import 'package:pokedex/commons/pokedex_ui/extensions/string_extensions.dart';
 import 'package:pokedex/commons/pokedex_ui/palettes/colors.dart';
 import 'package:pokedex/commons/pokedex_ui/widgets/pokedex_filter_button.dart';
 import 'package:pokedex/commons/pokedex_ui/widgets/pokedex_input_field.dart';
@@ -113,7 +114,7 @@ class _HomePageState extends State<HomePage> {
                                 },
                                 id: "#00${state.data[index].id}",
                                 imageUrl: state.data[index].image,
-                                name: state.data[index].name,
+                                name: state.data[index].name.capitalize(),
                               );
                             });
                       }

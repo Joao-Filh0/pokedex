@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:pokedex/commons/pokedex_ui/cubits/validator_bloc.dart';
-import 'package:pokedex/commons/pokedex_ui/extensions/color_extension.dart';
+import 'package:pokedex/commons/pokedex_ui/blocs/validator_bloc.dart';
+import 'package:pokedex/commons/pokedex_ui/extensions/color_extensions.dart';
 
 class PokedexProgressBar extends StatefulWidget {
   final double value;
@@ -19,13 +19,13 @@ class _PokedexProgressBarState extends State<PokedexProgressBar>
   late AnimationController _controller;
   late Animation<double> _animation;
 
-  late ValidatorCubit<double> _validatorCubit;
+  late ValidatorBloc<double> _validatorBloc;
   double countUpdate = 0;
 
   @override
   void initState() {
     super.initState();
-    _validatorCubit = ValidatorCubit<double>(countUpdate);
+    _validatorBloc = ValidatorBloc<double>(countUpdate);
 
     _controller = AnimationController(
       duration: const Duration(seconds: 2),
@@ -34,7 +34,7 @@ class _PokedexProgressBarState extends State<PokedexProgressBar>
 
     _animation = Tween<double>(begin: 0, end: widget.value).animate(_controller)
       ..addListener(() {
-        _validatorCubit(countUpdate);
+        _validatorBloc(countUpdate);
         countUpdate++;
       });
 
@@ -49,8 +49,8 @@ class _PokedexProgressBarState extends State<PokedexProgressBar>
 
   @override
   Widget build(BuildContext context) {
-    return BlocBuilder<ValidatorCubit<double>, double>(
-      bloc: _validatorCubit,
+    return BlocBuilder<ValidatorBloc<double>, double>(
+      bloc: _validatorBloc,
       builder: (context, state) {
         return ClipRRect(
           borderRadius: const BorderRadius.all(Radius.circular(10)),

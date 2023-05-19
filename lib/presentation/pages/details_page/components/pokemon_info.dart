@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:pokedex/commons/config/strings.dart';
 import 'package:pokedex/commons/pokedex_ui/enums/pokedex_icons_enum.dart';
-import 'package:pokedex/commons/pokedex_ui/extensions/color_extension.dart';
+import 'package:pokedex/commons/pokedex_ui/extensions/color_extensions.dart';
+import 'package:pokedex/commons/pokedex_ui/extensions/double_extensions.dart';
 import 'package:pokedex/commons/pokedex_ui/palettes/colors.dart';
 import 'package:pokedex/commons/pokedex_ui/widgets/pokedex_icon.dart';
 import 'package:pokedex/commons/pokedex_ui/widgets/pokedex_text.dart';
@@ -25,12 +26,12 @@ class PokemonInfo extends StatelessWidget {
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
         _IconInfo(
-            value: "${weight.toString().replaceAll('.', ',')} kg",
+            value: "${weight.doubleToString()} kg",
             icon: PokedexIconsEnum.weight,
             label: AppString.weight),
         const _CustomDivider(),
         _IconInfo(
-          value: "${height.toString().replaceAll('.', ',')} m",
+          value: "${height.doubleToString()} m",
           icon: PokedexIconsEnum.height,
           label: AppString.height,
         ),

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:pokedex/commons/config/strings.dart';
-import 'package:pokedex/commons/pokedex_ui/extensions/color_extension.dart';
+import 'package:pokedex/commons/pokedex_ui/extensions/color_extensions.dart';
 import 'package:pokedex/commons/pokedex_ui/palettes/colors.dart';
 import 'package:pokedex/commons/pokedex_ui/widgets/pokedex_progress_bar.dart';
 import 'package:pokedex/commons/pokedex_ui/widgets/pokedex_text.dart';
