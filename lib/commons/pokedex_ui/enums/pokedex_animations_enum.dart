@@ -1,0 +1,4 @@
+enum PokedexAnimationsEnum {
+  pokeball,
+  swablu,
+}

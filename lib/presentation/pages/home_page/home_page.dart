@@ -7,11 +7,12 @@ import 'package:pokedex/commons/pokedex_ui/extensions/string_extensions.dart';
 import 'package:pokedex/commons/pokedex_ui/palettes/colors.dart';
 import 'package:pokedex/commons/pokedex_ui/widgets/pokedex_filter_button.dart';
 import 'package:pokedex/commons/pokedex_ui/widgets/pokedex_input_field.dart';
-import 'package:pokedex/commons/pokedex_ui/widgets/pokedex_text.dart';
 import 'package:pokedex/commons/states/bloc_states.dart';
 import 'package:pokedex/core/domain/entities/poke_entity.dart';
 import 'package:pokedex/presentation/pages/details_page/details_page.dart';
 import 'package:pokedex/presentation/pages/home_page/blocs/get_pokemon_bloc.dart';
+import 'package:pokedex/presentation/pages/home_page/components/error_home_component.dart';
+import 'package:pokedex/presentation/pages/home_page/components/loading_home_component.dart';
 import 'components/header_component.dart';
 import 'components/pokedex_card_component.dart';
 
@@ -119,14 +120,12 @@ class _HomePageState extends State<HomePage> {
                             });
                       }
                       if (state is ErrorState) {
-                        return Center(
-                          child: PokedexText(text: state.message),
+                        return ErrorHomeComponent(
+                          message: state.message,
+                          onPressed: () => _bloc(),
                         );
                       }
-                      return Center(
-                          child: CircularProgressIndicator(
-                        color: AppColors.primary,
-                      ));
+                      return const LoadingHomeComponent();
                     },
                   ),
                 ),

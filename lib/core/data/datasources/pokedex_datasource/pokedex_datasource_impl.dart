@@ -22,7 +22,7 @@ class PokedexDataSourceImpl implements PokedexDataSource {
   @override
   Future<PokeUrlsEntity> getPokeUrl() async {
     final response = await _client.get('${AppUrls.pokedex}/pokemon',
-        queryParameters: {"limit": "54", "offset": "7"});
+        queryParameters: {"limit": "18", "offset": "7"});
     final data = (response.data as Map<String, dynamic>);
     return PokeUrlsModel.fromMap(data);
   }
