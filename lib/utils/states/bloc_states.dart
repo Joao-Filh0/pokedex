@@ -2,6 +2,14 @@ import 'package:equatable/equatable.dart';
 
 abstract class BaseState extends Equatable {}
 
+class EmptyState implements BaseState {
+  @override
+  List<Object?> get props => [];
+
+  @override
+  bool get stringify => false;
+}
+
 class LoadingState implements BaseState {
   const LoadingState();
 

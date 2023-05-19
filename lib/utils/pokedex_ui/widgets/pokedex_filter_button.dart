@@ -1,27 +1,32 @@
 import 'package:flutter/material.dart';
 import 'package:pokedex/utils/pokedex_ui/enums/pokedex_icons_enum.dart';
+import 'package:pokedex/utils/pokedex_ui/palettes/colors.dart';
 import 'package:pokedex/utils/pokedex_ui/widgets/pokedex_icon.dart';
 
 class PokedexFilterButton extends StatelessWidget {
-  const PokedexFilterButton({Key? key}) : super(key: key);
+  final double size;
+  final VoidCallback? onTap;
+
+  const PokedexFilterButton({Key? key, this.size = 45, this.onTap})
+      : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      width: 50,
-      height: 50,
+      width: size,
+      height: size,
       child: ElevatedButton(
         style: ButtonStyle(
-          backgroundColor: MaterialStateProperty.all(Colors.white),
+          backgroundColor: MaterialStateProperty.all(AppColors.light),
           elevation: MaterialStateProperty.all(2),
           shape: MaterialStateProperty.all<RoundedRectangleBorder>(
-              RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(100.0),
-                  side: const BorderSide(color: Colors.white, width: 2))),
+            RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(100.0),
+              side: BorderSide(color: AppColors.light, width: 2),
+            ),
+          ),
         ),
-        onPressed: () {
-          print('Botão pressionado');
-        },
+        onPressed: onTap,
         child: const PokedexIcon(icon: PokedexIconsEnum.filter),
       ),
     );

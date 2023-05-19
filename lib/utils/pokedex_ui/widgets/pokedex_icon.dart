@@ -6,16 +6,14 @@ import '../enums/pokedex_icons_enum.dart';
 class PokedexIcon extends StatelessWidget {
   static const String _iconsAssetsPath = 'assets/icons/';
   final PokedexIconsEnum icon;
-  final double width;
-  final double height;
+  final double size;
   final bool branded;
   final Color? color;
 
   const PokedexIcon(
       {required this.icon,
       Key? key,
-      this.width = 48,
-      this.height = 48,
+      this.size = 50,
       this.branded = false,
       this.color})
       : super(key: key);
@@ -25,8 +23,8 @@ class PokedexIcon extends StatelessWidget {
     return SvgPicture.asset(
       '$_iconsAssetsPath${icon.name}.svg',
       colorFilter: ColorFilter.mode(color ?? Colors.black, BlendMode.srcIn),
-      width: width,
-      height: height,
+      width: size,
+      height: size,
     );
   }
 }

@@ -3,7 +3,8 @@ import 'package:pokedex/utils/pokedex_ui/enums/pokedex_types_enum.dart';
 
 class AppColors {
   static Color primary = const Color(0xFFDC0A2D);
-  static Color background = const Color(0xFFFFFFFF);
+  static Color light = const Color(0xFFFFFFFF);
+  static Color neutral = const Color(0xFF666666);
   static Color shadow = const Color(0xFFEFEFEF);
 
   //Pokedex Colors

@@ -24,13 +24,15 @@ abstract class Result<T> {
 }
 
 class ResultSuccess<S> extends Result<S> {
-  final S success;
+  @override
+  final S _success;
 
-  ResultSuccess(this.success) : super(success!);
+  ResultSuccess(this._success) : super(_success!);
 }
 
 class ResultError<E> extends Result<E> {
-  final BaseError error;
+  @override
+  final BaseError _error;
 
-  ResultError(this.error) : super(error);
+  ResultError(this._error) : super(_error);
 }

@@ -1,33 +1,90 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:pokedex/utils/pokedex_ui/cubits/validator_bloc.dart';
 
-class PokedexInputField extends StatelessWidget {
-  const PokedexInputField({Key? key}) : super(key: key);
+import '../palettes/colors.dart';
+
+class PokedexInputField extends StatefulWidget {
+  final String hintText;
+  final TextEditingController? controller;
+
+  const PokedexInputField({Key? key, required this.hintText, this.controller})
+      : super(key: key);
+
+  @override
+  State<PokedexInputField> createState() => _PokedexInputFieldState();
+}
+
+class _PokedexInputFieldState extends State<PokedexInputField> {
+  static const double _radios = 30.0;
+  late ValidatorCubit<bool> _validatorCubit;
+  late bool hasController;
+
+  @override
+  void initState() {
+    super.initState();
+    _validatorCubit = ValidatorCubit<bool>(false);
+    hasController = widget.controller != null;
+  }
 
   @override
   Widget build(BuildContext context) {
-    return TextField(
-      onChanged: (v) {},
-      textInputAction: TextInputAction.search,
-      decoration: const InputDecoration(
-        filled: true,
-        fillColor: Colors.white,
-        disabledBorder: InputBorder.none,
-        border: OutlineInputBorder(
-          borderRadius: BorderRadius.all(Radius.circular(30.0)),
-          borderSide: BorderSide(color: Colors.grey),
-        ),
-        enabledBorder: OutlineInputBorder(
-          borderRadius: BorderRadius.all(Radius.circular(30.0)),
-          borderSide: BorderSide(color: Colors.grey),
-        ),
-        focusedBorder: OutlineInputBorder(
-          borderRadius: BorderRadius.all(Radius.circular(30.0)),
-          borderSide: BorderSide(color: Colors.grey),
-        ),
-        suffixIcon: Icon(Icons.close),
-        prefixIcon: Icon(Icons.search),
-        hintText: "Search",
-        contentPadding: EdgeInsets.all(15.0),
+    return SizedBox(
+      height: 45.0,
+      child: BlocBuilder<ValidatorCubit<bool>, bool>(
+        bloc: _validatorCubit,
+        builder: (context, value) {
+          return TextField(
+            controller: widget.controller,
+            onChanged: (inputted) => _validatorCubit(inputted.isNotEmpty),
+            cursorColor: AppColors.neutral,
+            textInputAction: TextInputAction.search,
+            style: TextStyle(
+              color: AppColors.neutral,
+              fontSize: 16.0,
+            ),
+            decoration: InputDecoration(
+              filled: true,
+              fillColor: AppColors.light,
+              disabledBorder: InputBorder.none,
+              border: OutlineInputBorder(
+                borderRadius: const BorderRadius.all(Radius.circular(_radios)),
+                borderSide: BorderSide(
+                  color: AppColors.shadow,
+                ),
+              ),
+              enabledBorder: OutlineInputBorder(
+                borderRadius: const BorderRadius.all(Radius.circular(_radios)),
+                borderSide: BorderSide(color: AppColors.shadow),
+              ),
+              focusedBorder: OutlineInputBorder(
+                borderRadius: const BorderRadius.all(Radius.circular(_radios)),
+                borderSide: BorderSide(
+                  color: AppColors.shadow,
+                ),
+              ),
+              suffixIcon: value && hasController
+                  ? GestureDetector(
+                      onTap: () {
+                        widget.controller!.clear();
+                      },
+                      child: Icon(
+                        Icons.close,
+                        size: 20,
+                        color: AppColors.primary,
+                      ),
+                    )
+                  : null,
+              prefixIcon: Icon(
+                Icons.search,
+                color: AppColors.primary,
+              ),
+              hintText: widget.hintText,
+              contentPadding: const EdgeInsets.all(7.0),
+              hintStyle: const TextStyle(fontSize: 14),
+            ),
+          );
+        },
       ),
     );
   }
