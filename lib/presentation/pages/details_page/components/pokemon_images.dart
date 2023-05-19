@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:pokedex/commons/pokedex_ui/enums/pokedex_icons_enum.dart';
-import 'package:pokedex/commons/pokedex_ui/palettes/colors.dart';
-import 'package:pokedex/commons/pokedex_ui/widgets/pokedex_icon.dart';
 import 'package:pokedex/commons/pokedex_ui/widgets/pokedex_icon_button.dart';
 import 'package:pokedex/core/domain/entities/poke_entity.dart';
 

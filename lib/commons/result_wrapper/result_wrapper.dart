@@ -4,14 +4,14 @@ abstract class Result<T> {
   T? _success;
   BaseError? _error;
 
-  Result(Object object) {
-    if (object is ResultSuccess) {
-      _success = object as T;
-    }
+  Result();
 
-    if (object is ResultError) {
-      _error = object as BaseError;
-    }
+  void setSuccess(T success) {
+    _success = success;
+  }
+
+  void setError(BaseError error) {
+    _error = error;
   }
 
   bool get isSuccess => _success != null;
@@ -24,15 +24,13 @@ abstract class Result<T> {
 }
 
 class ResultSuccess<S> extends Result<S> {
-  @override
-  final S _success;
-
-  ResultSuccess(this._success) : super(_success!);
+  ResultSuccess(S success) {
+    super.setSuccess(success);
+  }
 }
 
 class ResultError<E> extends Result<E> {
-  @override
-  final BaseError _error;
-
-  ResultError(this._error) : super(_error);
+  ResultError(BaseError error) {
+    super.setError(error);
+  }
 }
