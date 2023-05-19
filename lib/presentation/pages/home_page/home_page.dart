@@ -40,11 +40,11 @@ class _HomePageState extends State<HomePage> {
       body: Column(
         children: [
           SizedBox(
-            height: 180.0,
+            height: 150.0,
             child: Column(
               children: [
                 const Padding(
-                  padding: EdgeInsets.only(top: 60, left: 16.0),
+                  padding: EdgeInsets.only(top: 30, left: 16.0),
                   child: HeaderComponent(),
                 ),
                 Padding(
@@ -78,10 +78,7 @@ class _HomePageState extends State<HomePage> {
                   color: AppColors.light,
                 ),
                 child: Padding(
-                  padding: const EdgeInsets.only(
-                      left: _gridPadding,
-                      right: _gridPadding,
-                      bottom: _gridPadding),
+                  padding: const EdgeInsets.all(_gridPadding),
                   child: BlocBuilder<GetPokemonBloc, BaseState>(
                     bloc: _bloc,
                     builder: (context, state) {
@@ -96,6 +93,7 @@ class _HomePageState extends State<HomePage> {
                             itemCount: 9,
                             itemBuilder: (context, index) {
                               return PokedexCardComponent(
+                                tag: state.data[index].name,
                                 onTap: () {
                                   final params = DetailsPageParams(
                                       pokes: state.data, index: index);

@@ -23,9 +23,13 @@ class AppStart extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp.router(
       title: 'Flutter Pokédex',
-      theme: ThemeData(primarySwatch: Colors.blue),
-      builder: (context, child) => PokedexScrollConfiguration(
-        child: child,
+      theme: ThemeData(
+        //fontFamily: 'Poppins',
+      ),
+      builder: (context, child) => SafeArea(
+        child: PokedexScrollConfiguration(
+          child: child,
+        ),
       ),
       routeInformationParser: Modular.routeInformationParser,
       routerDelegate: Modular.routerDelegate,

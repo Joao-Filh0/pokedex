@@ -5,6 +5,7 @@ class PokedexCardComponent extends StatelessWidget {
   final String id;
   final String imageUrl;
   final String name;
+  final String? tag;
   final VoidCallback? onTap;
 
   const PokedexCardComponent(
@@ -12,6 +13,7 @@ class PokedexCardComponent extends StatelessWidget {
       required this.id,
       required this.imageUrl,
       required this.name,
+      this.tag,
       this.onTap})
       : super(key: key);
 
@@ -57,7 +59,9 @@ class PokedexCardComponent extends StatelessWidget {
                 child: SizedBox(
               width: imageSize,
               height: imageSize,
-              child: Image.network(fit: BoxFit.cover, imageUrl),
+              child: Hero(
+                  tag: tag ?? '',
+                  child: Image.network(fit: BoxFit.cover, imageUrl)),
             )),
             Align(
                 alignment: Alignment.bottomCenter,
