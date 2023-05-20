@@ -33,6 +33,7 @@ class PokeEntity extends Equatable {
 
   @override
   List<Object?> get props => [
+        id,
         name,
         types,
         abilities,
