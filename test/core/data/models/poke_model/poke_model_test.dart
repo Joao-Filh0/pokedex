@@ -7,18 +7,19 @@ void main() {
   test('[DATA] - PokeModel', () {
     const expectedModel = PokeModel(
       id: 1,
-      name: "Bulbasaur",
+      name: "pikachu",
       types: ["grass", "poison"],
       abilities: ["Overgrow", "Chlorophyll"],
-      image: "image_url",
+      image:
+          "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/25.png",
       weight: 6.9,
       height: 0.7,
-      hp: 45,
-      atk: 49,
-      def: 49,
-      satk: 65,
-      sdef: 65,
-      spd: 45,
+      hp: 0.45,
+      atk: 0.490,
+      def: 0.490,
+      satk: 0.65,
+      sdef: 0.65,
+      spd: 0.41,
     );
 
     final model = PokeModel.fromMap(pokeDataMock);
