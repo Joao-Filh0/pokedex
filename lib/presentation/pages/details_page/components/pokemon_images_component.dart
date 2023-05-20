@@ -3,12 +3,12 @@ import 'package:pokedex/commons/pokedex_ui/enums/pokedex_icons_enum.dart';
 import 'package:pokedex/commons/pokedex_ui/widgets/pokedex_icon_button.dart';
 import 'package:pokedex/core/domain/entities/poke_entity.dart';
 
-class PokemonImages extends StatelessWidget {
+class PokemonImagesComponent extends StatelessWidget {
   final VoidCallback? next;
   final VoidCallback? back;
   final PokeEntity pokemon;
 
-  const PokemonImages(
+  const PokemonImagesComponent(
       {Key? key, required this.next, required this.back, required this.pokemon})
       : super(key: key);
 

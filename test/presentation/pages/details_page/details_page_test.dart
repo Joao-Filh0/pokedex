@@ -3,7 +3,7 @@ import 'package:network_image_mock/network_image_mock.dart';
 import 'package:pokedex/commons/pokedex_ui/widgets/pokedex_text.dart';
 import 'package:pokedex/core/data/models/poke_model/poke_model.dart';
 import 'package:pokedex/core/domain/entities/poke_entity.dart';
-import 'package:pokedex/presentation/pages/details_page/components/pokemon_images.dart';
+import 'package:pokedex/presentation/pages/details_page/components/pokemon_images_component.dart';
 import 'package:pokedex/presentation/pages/details_page/details_page.dart';
 
 import '../../../core/data/data_mock.dart';
@@ -25,7 +25,7 @@ void main() {
         await tester.pumpAndSettle();
 
         expect(find.byType(PokedexText), findsNWidgets(25));
-        expect(find.byType(PokemonImages), findsOneWidget);
+        expect(find.byType(PokemonImagesComponent), findsOneWidget);
       });
     },
   );

@@ -7,12 +7,12 @@ import 'package:pokedex/commons/pokedex_ui/palettes/colors.dart';
 import 'package:pokedex/commons/pokedex_ui/widgets/pokedex_icon.dart';
 import 'package:pokedex/commons/pokedex_ui/widgets/pokedex_text.dart';
 
-class PokemonInfo extends StatelessWidget {
+class PokemonInfoComponent extends StatelessWidget {
   final List<String> abilities;
   final double weight;
   final double height;
 
-  const PokemonInfo(
+  const PokemonInfoComponent(
       {Key? key,
       required this.abilities,
       required this.weight,

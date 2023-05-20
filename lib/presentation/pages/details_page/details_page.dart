@@ -8,9 +8,9 @@ import 'package:pokedex/commons/pokedex_ui/helpers/select_pokedex_type_by_string
 import 'package:pokedex/commons/pokedex_ui/palettes/colors.dart';
 import 'package:pokedex/commons/pokedex_ui/widgets/pokedex_icon.dart';
 import 'package:pokedex/core/domain/entities/poke_entity.dart';
-import 'package:pokedex/presentation/pages/details_page/components/header_title.dart';
-import 'package:pokedex/presentation/pages/details_page/components/pokemon_images.dart';
-import 'components/card_body.dart';
+import 'package:pokedex/presentation/pages/details_page/components/header_title_component.dart';
+import 'package:pokedex/presentation/pages/details_page/components/pokemon_images_component.dart';
+import 'components/card_body_component.dart';
 
 class DetailsPageParams {
   final List<PokeEntity> pokes;
@@ -52,7 +52,7 @@ class _DetailsPageState extends State<DetailsPage> {
           backgroundColor: currentColor,
           body: Stack(
             children: [
-              CardBody(
+              CardBodyComponent(
                 color: currentColor,
                 pokemon: pokeSelected,
               ),
@@ -67,7 +67,7 @@ class _DetailsPageState extends State<DetailsPage> {
                   ),
                 ),
               ),
-              PokemonImages(
+              PokemonImagesComponent(
                 pokemon: pokeSelected,
                 next: indexPage + 1 >= widget.params.pokes.length
                     ? null
@@ -84,7 +84,7 @@ class _DetailsPageState extends State<DetailsPage> {
                       }
                     : null,
               ),
-              HeaderTitle(
+              HeaderTitleComponent(
                 name: pokeSelected.name,
               )
             ],

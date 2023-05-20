@@ -5,7 +5,7 @@ import 'package:pokedex/commons/pokedex_ui/palettes/colors.dart';
 import 'package:pokedex/commons/pokedex_ui/widgets/pokedex_progress_bar.dart';
 import 'package:pokedex/commons/pokedex_ui/widgets/pokedex_text.dart';
 
-class PokemonStatistics extends StatefulWidget {
+class PokemonStatisticsComponent extends StatefulWidget {
   final Color color;
   final double hp;
   final double atk;
@@ -14,7 +14,7 @@ class PokemonStatistics extends StatefulWidget {
   final double sdef;
   final double spd;
 
-  const PokemonStatistics(
+  const PokemonStatisticsComponent(
       {Key? key,
       required this.color,
       required this.hp,
@@ -26,10 +26,10 @@ class PokemonStatistics extends StatefulWidget {
       : super(key: key);
 
   @override
-  State<PokemonStatistics> createState() => _PokemonStatisticsState();
+  State<PokemonStatisticsComponent> createState() => _PokemonStatisticsComponentState();
 }
 
-class _PokemonStatisticsState extends State<PokemonStatistics> {
+class _PokemonStatisticsComponentState extends State<PokemonStatisticsComponent> {
   @override
   Widget build(BuildContext context) {
     final size = MediaQuery.of(context).size;

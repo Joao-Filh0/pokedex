@@ -6,10 +6,10 @@ import 'package:pokedex/commons/pokedex_ui/palettes/colors.dart';
 import 'package:pokedex/commons/pokedex_ui/widgets/pokedex_icon.dart';
 import 'package:pokedex/commons/pokedex_ui/widgets/pokedex_text.dart';
 
-class HeaderTitle extends StatelessWidget {
+class HeaderTitleComponent extends StatelessWidget {
   final String name;
 
-  const HeaderTitle({Key? key, required this.name}) : super(key: key);
+  const HeaderTitleComponent({Key? key, required this.name}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

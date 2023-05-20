@@ -3,7 +3,7 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:pokedex/commons/pokedex_ui/widgets/pokedex_text.dart';
 import 'package:pokedex/core/data/models/poke_model/poke_model.dart';
 import 'package:pokedex/core/domain/entities/poke_entity.dart';
-import 'package:pokedex/presentation/pages/details_page/components/pokemon_images.dart';
+import 'package:pokedex/presentation/pages/details_page/components/pokemon_images_component.dart';
 import 'package:pokedex/presentation/pages/details_page/details_page.dart';
 
 import '../../../test/presentation/run_test_widget.dart';
@@ -48,7 +48,7 @@ void main() {
       await tester.pumpAndSettle(const Duration(seconds: 10));
 
       expect(find.byType(PokedexText), findsNWidgets(24));
-      expect(find.byType(PokemonImages), findsOneWidget);
+      expect(find.byType(PokemonImagesComponent), findsOneWidget);
     },
   );
 }

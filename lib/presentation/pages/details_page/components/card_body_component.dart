@@ -4,14 +4,14 @@ import 'package:pokedex/commons/pokedex_ui/palettes/colors.dart';
 import 'package:pokedex/commons/pokedex_ui/widgets/pokedex_animation_types.dart';
 import 'package:pokedex/commons/pokedex_ui/widgets/pokedex_text.dart';
 import 'package:pokedex/core/domain/entities/poke_entity.dart';
-import 'package:pokedex/presentation/pages/details_page/components/pokemon_info.dart';
-import 'package:pokedex/presentation/pages/details_page/components/pokemon_statistics.dart';
+import 'package:pokedex/presentation/pages/details_page/components/pokemon_info_component.dart';
+import 'package:pokedex/presentation/pages/details_page/components/pokemon_statistics_component.dart';
 
-class CardBody extends StatelessWidget {
+class CardBodyComponent extends StatelessWidget {
   final Color color;
   final PokeEntity pokemon;
 
-  const CardBody({Key? key, required this.color, required this.pokemon})
+  const CardBodyComponent({Key? key, required this.color, required this.pokemon})
       : super(key: key);
 
   @override
@@ -51,7 +51,7 @@ class CardBody extends StatelessWidget {
                         size: size.height * 0.027,
                       ),
                     ),
-                    PokemonInfo(
+                    PokemonInfoComponent(
                       abilities: pokemon.abilities,
                       weight: pokemon.weight,
                       height: pokemon.height,
@@ -74,7 +74,7 @@ class CardBody extends StatelessWidget {
                     ),
                     Padding(
                       padding: EdgeInsets.all(size.height * 0.01),
-                      child: PokemonStatistics(
+                      child: PokemonStatisticsComponent(
                         color: color,
                         hp: pokemon.hp,
                         atk: pokemon.atk,
