@@ -14,15 +14,20 @@ class PokedexIconButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    const double size = 13.43;
     return Visibility(
       visible: visible,
+      replacement: const SizedBox(
+        width: size,
+        height: size,
+      ),
       child: GestureDetector(
         onTap: onTap,
         child: Padding(
           padding: const EdgeInsets.all(18.0),
           child: PokedexIcon(
             icon: icon,
-            size: 13.43,
+            size: size,
             color: AppColors.light,
           ),
         ),

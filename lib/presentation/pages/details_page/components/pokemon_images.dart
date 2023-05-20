@@ -25,6 +25,7 @@ class PokemonImages extends StatelessWidget {
             mainAxisAlignment:  MainAxisAlignment.spaceBetween,
             children: [
               PokedexIconButton(
+                key: const Key("back"),
                 icon: PokedexIconsEnum.left,
                 visible: back != null,
                 onTap: back,
@@ -39,6 +40,7 @@ class PokemonImages extends StatelessWidget {
                       pokemon.image)),
               const Spacer(),
               PokedexIconButton(
+                key: const Key("next"),
                 icon: PokedexIconsEnum.right,
                 visible: next != null,
                 onTap: next,

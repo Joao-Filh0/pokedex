@@ -1,6 +1,6 @@
 final pokeDataMock = {
   "id": 1,
-  "name": "Bulbasaur",
+  "name": "pikachu",
   "types": [
     {
       "type": {"name": "grass"}
@@ -20,19 +20,19 @@ final pokeDataMock = {
   "sprites": {
     "other": {
       "official-artwork": {
-        "front_default": "image_url",
+        "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/25.png",
       }
     }
   },
   "weight": 69,
   "height": 7,
   "stats": [
-    {"base_stat": 4500},
-    {"base_stat": 4900},
-    {"base_stat": 4900},
-    {"base_stat": 6500},
-    {"base_stat": 6500},
-    {"base_stat": 4500},
+    {"base_stat": 45},
+    {"base_stat": 49},
+    {"base_stat": 49},
+    {"base_stat": 65},
+    {"base_stat": 65},
+    {"base_stat": 41},
   ],
 };
 

@@ -6,4 +6,4 @@ Widget runWidgetTest(Widget widget) => MaterialApp(
       body: widget,
     )));
 
-Widget runPageTest(Widget widget) => MaterialApp(home: Material(child: widget));
+Widget runPageTest(Widget widget) => MaterialApp(home: Material(child: SafeArea(child: widget)));
