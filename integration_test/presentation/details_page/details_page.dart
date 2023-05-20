@@ -27,7 +27,7 @@ void main() {
       final backButton = find.byKey(const Key("back"));
       await tester.pumpAndSettle(const Duration(seconds: 1));
       for (var element in entities) {
-        await tester.pumpAndSettle(const Duration(seconds: 6));
+        await tester.pumpAndSettle(const Duration(seconds: 2));
         if (element == entities[0]) {
           continue;
         }
@@ -35,10 +35,8 @@ void main() {
         await tester.tap(nextButton);
         await tester.pumpAndSettle(const Duration(seconds: 1));
       }
-      await tester.pumpAndSettle(const Duration(seconds: 5));
       for (var element in entities) {
-        await tester.pumpAndSettle(const Duration(seconds: 1));
-        await tester.pumpAndSettle(const Duration(seconds: 6));
+        await tester.pumpAndSettle(const Duration(seconds: 2));
         if (element == entities[0]) {
           continue;
         }

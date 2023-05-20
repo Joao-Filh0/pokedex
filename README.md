@@ -22,7 +22,7 @@ lib/
 |   |___ result_wrapper/    # Contém a implementação de um padrão de envoltório de resultado para tratar de operações que podem falhar ou ter sucesso.
 |   |___ states/            # Contém a definição dos estados de UI que podem ser compartilhados entre vários widgets.
 |   
-|--- core/                  # Diretório que contém a lógica central da aplicação (ou seja, as regras de negócio).
+|___ core/                  # Diretório que contém a lógica central da aplicação (ou seja, as regras de negócio).
 |   |___ data/              # Contém as implementações de armazenamento de dados e redes da aplicação.
 |   |   |___ datasouces/    # Encarregado de buscar dados de uma fonte externa, como uma API.
 |   |   |___ models/        # Modelos de dados que são usados para transportar dados dentro da aplicação.
