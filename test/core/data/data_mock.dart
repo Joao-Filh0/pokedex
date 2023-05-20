@@ -3,10 +3,10 @@ final pokeDataMock = {
   "name": "Bulbasaur",
   "types": [
     {
-      "type": {"name": "Grass"}
+      "type": {"name": "grass"}
     },
     {
-      "type": {"name": "Poison"}
+      "type": {"name": "poison"}
     },
   ],
   "abilities": [

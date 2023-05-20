@@ -16,72 +16,76 @@ class CardBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final size = MediaQuery.of(context).size;
+    final paddingSize = size.height * 0.01;
     return Column(
       crossAxisAlignment: CrossAxisAlignment.center,
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
         const Expanded(child: SizedBox.shrink()),
         Padding(
-          padding: const EdgeInsets.only(left: 8.0, right: 8.0, bottom: 8.0),
+          padding: EdgeInsets.only(left: paddingSize, right: paddingSize, bottom: paddingSize),
           child: Container(
-            height: MediaQuery.of(context).size.height * 0.65,
+            height: size.height * 0.69,
             width: double.infinity,
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(15),
               color: AppColors.light,
             ),
             child: Padding(
-              padding: const EdgeInsets.only(top: 20.0),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.center,
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  PokedexAnimationTypes(
-                    types: pokemon.types,
-                  ),
-                  Padding(
-                    padding: const EdgeInsets.symmetric(vertical: 15.0),
-                    child: PokedexText(
-                      text: AppString.about,
-                      color: color,
-                      isFontFamily: true,
-                      size: 20.0,
+              padding:  EdgeInsets.only(top: size.height * 0.06),
+              child: SingleChildScrollView(
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    PokedexAnimationTypes(
+                      types: pokemon.types,
                     ),
-                  ),
-                  PokemonInfo(
-                    abilities: pokemon.abilities,
-                    weight: pokemon.weight,
-                    height: pokemon.height,
-                  ),
-                  Padding(
-                    padding: const EdgeInsets.symmetric(
-                        vertical: 25.0, horizontal: 15.0),
-                    child: PokedexText(
-                      text: AppString.pokemonDescriptionMock,
+                    Padding(
+                      padding: EdgeInsets.symmetric(vertical: size.height * 0.02),
+                      child: PokedexText(
+                        text: AppString.about,
+                        color: color,
+                        isFontFamily: true,
+                        size: size.height * 0.027,
+                      ),
                     ),
-                  ),
-                  Padding(
-                    padding: const EdgeInsets.only(bottom: 8.0),
-                    child: PokedexText(
-                      text: AppString.baseStats,
-                      color: color,
-                      isFontFamily: true,
-                      size: 20.0,
+                    PokemonInfo(
+                      abilities: pokemon.abilities,
+                      weight: pokemon.weight,
+                      height: pokemon.height,
                     ),
-                  ),
-                  Padding(
-                    padding: const EdgeInsets.all(8.0),
-                    child: PokemonStatistics(
-                      color: color,
-                      hp: pokemon.hp,
-                      atk: pokemon.atk,
-                      def: pokemon.def,
-                      satk: pokemon.satk,
-                      sdef: pokemon.sdef,
-                      spd: pokemon.spd,
+                    Padding(
+                      padding: EdgeInsets.symmetric(
+                          vertical: size.height * 0.02, horizontal: size.height * 0.03),
+                      child: PokedexText(
+                        text: AppString.pokemonDescriptionMock,
+                      ),
                     ),
-                  ),
-                ],
+                    Padding(
+                      padding: EdgeInsets.only(bottom: size.height * 0.01),
+                      child: PokedexText(
+                        text: AppString.baseStats,
+                        color: color,
+                        isFontFamily: true,
+                        size: size.height * 0.027,
+                      ),
+                    ),
+                    Padding(
+                      padding: EdgeInsets.all(size.height * 0.01),
+                      child: PokemonStatistics(
+                        color: color,
+                        hp: pokemon.hp,
+                        atk: pokemon.atk,
+                        def: pokemon.def,
+                        satk: pokemon.satk,
+                        sdef: pokemon.sdef,
+                        spd: pokemon.spd,
+                      ),
+                    ),
+                  ],
+                ),
               ),
             ),
           ),

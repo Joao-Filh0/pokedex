@@ -20,8 +20,9 @@ class PokedexCardComponent extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final size = MediaQuery.of(context).size;
     const baseCardSize = 150.0;
-    const imageSize = 80.0;
+    final  imageSize = size.width * 0.15;
     const radios = 10.0;
     return GestureDetector(
       onTap: onTap,

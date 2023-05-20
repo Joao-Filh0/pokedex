@@ -6,8 +6,10 @@ import 'package:pokedex/commons/pokedex_ui/extensions/color_extensions.dart';
 class PokedexProgressBar extends StatefulWidget {
   final double value;
   final Color color;
+  final double size;
 
-  const PokedexProgressBar({Key? key, required this.value, required this.color})
+  const PokedexProgressBar(
+      {Key? key, required this.value, required this.color, required this.size})
       : super(key: key);
 
   @override
@@ -55,7 +57,7 @@ class _PokedexProgressBarState extends State<PokedexProgressBar>
         return ClipRRect(
           borderRadius: const BorderRadius.all(Radius.circular(10)),
           child: SizedBox(
-            height: 6.0,
+            height: widget.size,
             child: LinearProgressIndicator(
               color: widget.color,
               backgroundColor: widget.color.light(),

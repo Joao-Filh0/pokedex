@@ -32,8 +32,6 @@ class _DetailsPageState extends State<DetailsPage> {
   late PokeEntity pokeSelected;
   late PokedexTypesEnum type;
 
-  int test = 1;
-
   late Color currentColor;
   late ValidatorBloc<int> _jumpPokemonBloc;
 
@@ -46,6 +44,7 @@ class _DetailsPageState extends State<DetailsPage> {
 
   @override
   Widget build(BuildContext context) {
+    final size = MediaQuery.of(context).size;
     return BlocBuilder<ValidatorBloc<int>, int>(
       bloc: _jumpPokemonBloc,
       builder: (context, indexPage) {
@@ -60,23 +59,23 @@ class _DetailsPageState extends State<DetailsPage> {
               Align(
                 alignment: Alignment.topRight,
                 child: Padding(
-                  padding: const EdgeInsets.only(right: 9.0),
+                  padding: EdgeInsets.only(right: size.height * 0.02),
                   child: PokedexIcon(
                     color: currentColor.light(0.06),
                     icon: PokedexIconsEnum.pokeball,
-                    size: 242,
+                    size: size.height * 0.25,
                   ),
                 ),
               ),
               PokemonImages(
                 pokemon: pokeSelected,
-                next: indexPage <= widget.params.pokes.length
-                    ? () {
+                next: indexPage + 1 >= widget.params.pokes.length
+                    ? null
+                    : () {
                         indexPage++;
                         _updatePokemon(indexPage);
                         _jumpPokemonBloc(indexPage);
-                      }
-                    : null,
+                      },
                 back: indexPage > 0
                     ? () {
                         indexPage--;

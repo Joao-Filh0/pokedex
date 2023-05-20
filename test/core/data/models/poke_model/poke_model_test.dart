@@ -8,7 +8,7 @@ void main() {
     const expectedModel = PokeModel(
       id: 1,
       name: "Bulbasaur",
-      types: ["Grass", "Poison"],
+      types: ["grass", "poison"],
       abilities: ["Overgrow", "Chlorophyll"],
       image: "image_url",
       weight: 6.9,

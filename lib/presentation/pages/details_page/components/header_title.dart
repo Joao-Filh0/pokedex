@@ -13,6 +13,7 @@ class HeaderTitle extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final size = MediaQuery.of(context).size;
     return Align(
       alignment: Alignment.topLeft,
       child: Padding(
@@ -25,17 +26,17 @@ class HeaderTitle extends StatelessWidget {
               },
               child: PokedexIcon(
                 icon: PokedexIconsEnum.back,
-                size: 25.0,
+                size: size.height * 0.03,
                 color: AppColors.light,
               ),
             ),
-            const SizedBox(
-              width: 13.73,
+            SizedBox(
+              width: size.height * 0.02,
             ),
             PokedexText(
               text: name.capitalize(),
               isFontFamily: true,
-              size: 32,
+              size: size.height * 0.04,
               color: AppColors.light,
             )
           ],

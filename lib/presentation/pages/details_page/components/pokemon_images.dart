@@ -14,8 +14,9 @@ class PokemonImages extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final size = MediaQuery.of(context).size * 0.4;
     return Positioned(
-      top: 90,
+      top: size.height * 0.3,
       child: SizedBox(
         width: MediaQuery.of(context).size.width,
         child: Padding(
@@ -31,9 +32,9 @@ class PokemonImages extends StatelessWidget {
               Hero(
                   tag: pokemon.name,
                   child: Image.network(
-                      width: 220,
-                      height: 220,
-                      fit: BoxFit.cover,
+                      width: size.width,
+                      height: size.height * 0.5,
+                      fit: BoxFit.fill,
                       pokemon.image)),
               const Spacer(),
               PokedexIconButton(

@@ -32,6 +32,7 @@ class PokemonStatistics extends StatefulWidget {
 class _PokemonStatisticsState extends State<PokemonStatistics> {
   @override
   Widget build(BuildContext context) {
+    final size = MediaQuery.of(context).size;
     return Row(
       crossAxisAlignment: CrossAxisAlignment.center,
       mainAxisAlignment: MainAxisAlignment.center,
@@ -53,7 +54,7 @@ class _PokemonStatisticsState extends State<PokemonStatistics> {
           ],
         ),
         SizedBox(
-            height: 115,
+            height: size.height * 0.15,
             child: VerticalDivider(
               color: AppColors.neutral.light(0.4),
               thickness: 2,
@@ -80,24 +81,28 @@ class _ProgressWithLabel extends StatelessWidget {
   final Color color;
   final double value;
 
+
   const _ProgressWithLabel({Key? key, required this.color, required this.value})
       : super(key: key);
 
   @override
   Widget build(BuildContext context) {
+    final size = MediaQuery.of(context).size;
     return Padding(
-      padding: const EdgeInsets.only(bottom: 5.0),
+      padding: EdgeInsets.only(bottom: size.height * 0.006),
       child: Row(
+        mainAxisAlignment: MainAxisAlignment.start,
         children: [
-          PokedexText(text: '$value'.replaceAll(".", "")),
           Padding(
-            padding: const EdgeInsets.only(left: 10.0),
-            child: SizedBox(
-              width: MediaQuery.of(context).size.width * 0.6,
-              child: PokedexProgressBar(
-                color: color,
-                value: value,
-              ),
+            padding: EdgeInsets.only(right: size.width * 0.02),
+            child: PokedexText(text: '$value'.replaceAll(".", "")),
+          ),
+          SizedBox(
+            width: size.width * 0.6,
+            child: PokedexProgressBar(
+              color: color,
+              value: value,
+              size: size.height * 0.007,
             ),
           ),
         ],
