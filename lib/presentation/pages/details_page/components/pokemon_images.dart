@@ -22,6 +22,7 @@ class PokemonImages extends StatelessWidget {
         child: Padding(
           padding: const EdgeInsets.symmetric(horizontal: 32.0),
           child: Row(
+            mainAxisAlignment:  MainAxisAlignment.spaceBetween,
             children: [
               PokedexIconButton(
                 icon: PokedexIconsEnum.left,
