@@ -5,6 +5,7 @@ class AppString {
   static String await = "Aguarde ...";
   static String errorMessage = "Aconteceu um erro inesperado";
   static String tryAgain = "Tentar Novamente";
+  static String sortBy = "sort by:";
   static String about = "About";
   static String hp = "HP";
   static String atk = "ATK";

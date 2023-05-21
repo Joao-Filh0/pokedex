@@ -18,7 +18,7 @@ lib/
 |   |___ config/            # Contém arquivos de configuração que controlam várias configurações da aplicação.
 |   |___ erros/             # Contém classes para lidar com os diferentes tipos de erros que a aplicação pode encontrar.
 |   |___ http_client/       # Contém a configuração para as solicitações HTTP feitas pela aplicação.
-|   |___ pokedex_ui/        # Contém componentes de interface de usuário reutilizáveis para construir a UI do Pokedex.
+|   |___ pokedex_ui/        # Contém widgets, paleta de cores, extensions, blocs e enums reutilizáveis para implementar a UI do App.
 |   |___ result_wrapper/    # Contém a implementação de um padrão de envoltório de resultado para tratar de operações que podem falhar ou ter sucesso.
 |   |___ states/            # Contém a definição dos estados de UI que podem ser compartilhados entre vários widgets.
 |   

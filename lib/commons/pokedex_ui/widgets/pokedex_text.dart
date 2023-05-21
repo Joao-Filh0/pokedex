@@ -18,6 +18,7 @@ class PokedexText extends StatelessWidget {
   Widget build(BuildContext context) {
     return Text(text,
         style: TextStyle(
+            decoration: TextDecoration.none,
             fontFamily: isFontFamily ? "Poppins" : null,
             color: color,
             fontSize: size));

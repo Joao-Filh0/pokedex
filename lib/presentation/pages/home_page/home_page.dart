@@ -5,6 +5,7 @@ import 'package:pokedex/commons/config/routes.dart';
 import 'package:pokedex/commons/config/strings.dart';
 import 'package:pokedex/commons/pokedex_ui/extensions/string_extensions.dart';
 import 'package:pokedex/commons/pokedex_ui/palettes/colors.dart';
+import 'package:pokedex/commons/pokedex_ui/widgets/pokedex_dialogs.dart';
 import 'package:pokedex/commons/pokedex_ui/widgets/pokedex_filter_button.dart';
 import 'package:pokedex/commons/pokedex_ui/widgets/pokedex_input_field.dart';
 import 'package:pokedex/commons/states/bloc_states.dart';
@@ -71,7 +72,8 @@ class _HomePageState extends State<HomePage> {
                       const SizedBox(
                         width: 16,
                       ),
-                      PokedexFilterButton(onTap: () {})
+                      PokedexFilterButton(
+                          onTap: () => PokedexDialog.sortBy(context))
                     ],
                   ),
                 ),
