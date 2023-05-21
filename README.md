@@ -27,6 +27,7 @@ lib/
 |   |   |___ datasouces/    # Encarregado de buscar dados de uma fonte externa, como uma API.
 |   |   |___ models/        # Modelos de dados que são usados para transportar dados dentro da aplicação.
 |   |   |___ repositories/  # Implementa a lógica de busca e armazenamento de dados.
+|   |   
 |   |___ domain/            # Contém a lógica de negócios central e as entidades da aplicação.
 |       |___ use_cases/     # Encarregado de orquestrar a execução das regras de negócios.
 |       |___ repositories/  # Interfaces que definem o que os repositórios de dados devem fazer.
