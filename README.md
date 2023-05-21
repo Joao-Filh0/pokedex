@@ -4,7 +4,7 @@
 <img src="assets/doc/details.jpeg"  width="338">
 
 
-Um app onde você pode pesquisar e navegar por uma extensa lista de Pokémon, desde os clássicos até os mais recentes.
+Um app desenvolvido com flutter na versão **3.10.0** onde você pode pesquisar e navegar por uma extensa lista de Pokémon, desde os clássicos até os mais recentes.
 Cada Pokémon tem sua própria página dedicada, onde você pode encontrar uma variedade de informações essenciais,
 incluindo tipo, habilidades, estatísticas de batalha, evoluções e muito mais.
 
@@ -53,6 +53,8 @@ Sem coverage
 ```flutter test test/```
 com coverage
 ```flutter test --machine --coverage > tests.output```
+
+Para ver informações sobre o coverage, clique [aqui](coverage/tests_coverage.html)
 
 ## Rodando Testes de integração
 
