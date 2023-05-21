@@ -54,8 +54,6 @@ Sem coverage
 com coverage
 ```flutter test --machine --coverage > tests.output```
 
-Baixe o html  [aqui](https://github.com/Joao-Filh0/pokedex/raw/main/coverage/tests_coverage.html) para ter mais informações sobre o coverage.
-
 ## Rodando Testes de integração
 
 Antes de tudo, identifique o dispositivo conectado.
